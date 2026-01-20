@@ -28,20 +28,20 @@ The following events were identified:
 - Successful login sessions
 - Privilege escalation events using sudo
 
-![Authentication Log Overview](screenshots/root_entries)
+![Authentication Log Overview](screenshots/root_entries.png)
 
 ### 2. Failed Login Quantification
 Failed login attempts were counted and reviewed with:
 *sudo grep "FAILED_LOGIN" /var/log/auth.log*
 *sudo grep "FAILED_LOGIN" /var/log/auth.log | wc -l*
 
-![Failed Login Count and Timestamps](screenshots/num_fails)
+![Failed Login Count and Timestamps](screenshots/num_fails.png)
 
 ### 3. Successful Authentication Review
 Successful logins were identified to provide context:
 *sudo grep "session opened for user" /var/log/auth.log*
 
-![Successful Login Events](screenshots/successful_logins)
+![Successful Login Events](screenshots/successful_logins.png)
 
 This confirmed that failed attempts were followed by a legitimate login, indicating user error rather than malicious activity.
 
@@ -54,8 +54,8 @@ The script:
 - Counts total failed login attempts
 - Aggregates failures by username
 
-![Bash Script](screenshots/bash_script)
-![Script Execution Output](screenshots/script_run)
+![Bash Script](screenshots/bash_script.png)
+![Script Execution Output](screenshots/script_run.png)
 
 ## Findings
 - Failed login attempts occurred within a short time window
